@@ -24,6 +24,7 @@ Trapezoid<T>::Trapezoid(const Trapezoid& other) : points(std::make_unique<geom::
 template <geom::Scalar T>
 Trapezoid<T>::Trapezoid(Trapezoid&& other) noexcept : points(std::move(other.points)) {}
 
+
 template <geom::Scalar T>
 Trapezoid<T>& Trapezoid<T>::operator=(const Trapezoid& other) {
     if (this == &other) return *this;
@@ -69,7 +70,6 @@ double Trapezoid<T>::area() const {
     }
     return std::fabs(sum) / 2.0;
 }
-
 
 template <geom::Scalar T>
 geom::Point<T> Trapezoid<T>::center() const {

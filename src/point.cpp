@@ -28,6 +28,7 @@ namespace geom {
         }
         return *this;
     }
+    
 
     template<Scalar T>
     T Point<T>::x() const noexcept { return x_; }
@@ -43,6 +44,7 @@ namespace geom {
 
     template<Scalar T>
     void Point<T>::set(T x, T y) noexcept { x_ = x; y_ = y; }
+
 
     template<Scalar T>
     Point<T> Point<T>::operator+(const Point& other) const noexcept {
@@ -74,6 +76,7 @@ namespace geom {
         }
     }
 
+
     template<Scalar T>
     T Point<T>::dot(const Point& other) const noexcept {
         return x_ * other.x_ + y_ * other.y_;
@@ -96,6 +99,7 @@ namespace geom {
         return {x_, y_};
     }
 
+
     template<Scalar T>
     std::ostream& operator<<(std::ostream& os, const Point<T>& p) {
         os << p.x_ << " " << p.y_;
@@ -108,11 +112,13 @@ namespace geom {
         return is;
     }
 
+
     template<Scalar T>
     Point<T> mid_point(const Point<T>& a, const Point<T>& b) noexcept {
         return Point<T>((a.x() + b.x()) / static_cast<T>(2),
                         (a.y() + b.y()) / static_cast<T>(2));
     }
+
 
     template class Point<int>;
     template class Point<float>;

@@ -29,6 +29,7 @@ Square<T>& Square<T>::operator=(const Square& other) {
     return *this;
 }
 
+
 template <geom::Scalar T>
 Square<T>& Square<T>::operator=(Square&& other) noexcept {
     if (this == &other) return *this;
@@ -96,6 +97,7 @@ std::unique_ptr<Figure<T>> Square<T>::clone() const {
         newSquare->points[i] = points[i];
     return newSquare;
 }
+
 
 template class Square<int>;
 template class Square<double>;

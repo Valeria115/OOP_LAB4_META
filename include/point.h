@@ -11,7 +11,6 @@
 
 namespace geom {
     
-
     template<Scalar T>
     class Point {
     public:

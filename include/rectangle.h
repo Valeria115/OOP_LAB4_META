@@ -9,6 +9,7 @@
 template <geom::Scalar T>
 class Rectangle : public Figure<T> {
 public:
+
     Rectangle();
     Rectangle(const std::unique_ptr<geom::Point<T>[]>& pts);
     Rectangle(const Rectangle& other);

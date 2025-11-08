@@ -106,6 +106,7 @@ T& Array<T>::get(std::size_t index) const {
     return m_data[index];
 }
 
+
 template<typename T>
 std::size_t Array<T>::size() const noexcept {
     return m_size;
@@ -116,6 +117,7 @@ std::size_t Array<T>::capacity() const noexcept {
     return m_capacity;
 }
 
+
 template<typename T>
 void Array<T>::resize(std::size_t new_cap) {
     std::unique_ptr<T[]> new_data = std::make_unique<T[]>(new_cap);
@@ -124,6 +126,7 @@ void Array<T>::resize(std::size_t new_cap) {
     m_data = std::move(new_data);
     m_capacity = new_cap;
 }
+
 
 template<typename T>
 void Array<T>::print(std::ostream& os) const {

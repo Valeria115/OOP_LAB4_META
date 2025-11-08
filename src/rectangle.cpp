@@ -20,6 +20,7 @@ Rectangle<T>::Rectangle(const Rectangle& other) : points(std::make_unique<geom::
 template <geom::Scalar T>
 Rectangle<T>::Rectangle(Rectangle&& other) noexcept : points(std::move(other.points)) {}
 
+
 template <geom::Scalar T>
 Rectangle<T>& Rectangle<T>::operator=(const Rectangle& other) {
     if (this == &other) return *this;
@@ -36,6 +37,7 @@ Rectangle<T>& Rectangle<T>::operator=(Rectangle&& other) noexcept {
     return *this;
 }
 
+
 template <geom::Scalar T>
 void Rectangle<T>::read(std::istream& is) {
     for (std::size_t i = 0; i < Rectangle<T>::vertexCount; ++i)
@@ -51,6 +53,7 @@ void Rectangle<T>::print(std::ostream& os) const {
     geom::Point<T> c = center();
     os << "Center: " << c.x() << " " << c.y() << "\n";
 }
+
 
 template <geom::Scalar T>
 double Rectangle<T>::area() const {
@@ -76,6 +79,7 @@ Rectangle<T>::operator double() const {
     return area();
 }
 
+
 template <geom::Scalar T>
 bool Rectangle<T>::equals(const Figure<T>& other) const {
     const Rectangle<T>* rect = dynamic_cast<const Rectangle<T>*>(&other);
@@ -93,6 +97,7 @@ std::unique_ptr<Figure<T>> Rectangle<T>::clone() const {
         newRect->points[i] = points[i];
     return newRect;
 }
+
 
 template class Rectangle<int>;
 template class Rectangle<double>;

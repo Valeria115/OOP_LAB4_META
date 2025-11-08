@@ -9,6 +9,7 @@
 template <geom::Scalar T>
 class Trapezoid : public Figure<T> {
 public:
+
     Trapezoid();
     Trapezoid(const std::unique_ptr<geom::Point<T>[]>& pts);
     Trapezoid(const Trapezoid& other);
@@ -26,6 +27,7 @@ public:
     std::unique_ptr<Figure<T>> clone() const override;
 
 private:
+
     std::unique_ptr<geom::Point<T>[]> points;
     const std::size_t vertexCount = 4;
 };

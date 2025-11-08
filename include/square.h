@@ -11,6 +11,7 @@
 template <geom::Scalar T>
 class Square : public Figure<T> {
 public:
+
     Square();
     Square(const std::unique_ptr<geom::Point<T>[]>& pts);
     Square(const Square& other);
